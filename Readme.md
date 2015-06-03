@@ -13,7 +13,7 @@ Download here: [https://github.com/MacHu-GWU/text-processing-dot-com-unlimited-a
 
 ##Sentiment Analysis API
 
-This module can make http request to [http://text-processing.com/demo/stem/](http://text-processing.com/demo/stem/) to get sentiment analysis result. Because it doesn't use www.text-processing.com API, so it's completely free and no limited. But if you make too much http requests in short period of time, your IP could be banned.
+This module can make http request to [http://text-processing.com/demo/sentiment/](http://text-processing.com/demo/sentiment/) to get sentiment analysis result. Because it doesn't use www.text-processing.com API, so it's completely free and no limited. But if you make too much http requests in short period of time, your IP could be banned.
 
 **Usage example**
 

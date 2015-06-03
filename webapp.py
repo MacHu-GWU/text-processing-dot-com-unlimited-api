@@ -1,7 +1,8 @@
 ##encoding=utf-8
 
 """
-This is a web app you can use to do batch sentiment analysis
+This is a web app you can use to do batch sentiment analysis.
+Notice: To use this app, first edit the ip address at the bottom of this script first.
 
 Prerequisite
 ------------
