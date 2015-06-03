@@ -1,8 +1,15 @@
 #text-processing-dot-com unlimited api
 
-##Install
+##Download and Install
 
-Run text-processing-dot-com-unlimited-api\textprocessingdotcom\manual_install.py with Python2/Python3
+**Download** 
+
+Download here: [https://github.com/MacHu-GWU/text-processing-dot-com-unlimited-api/archive/master.zip](https://github.com/MacHu-GWU/text-processing-dot-com-unlimited-api/archive/master.zip)
+
+**Install**
+
+1. cd to -dir text-processing-dot-com-unlimited-api\textprocessingdotcom\...
+2. run [text-processing-dot-com-unlimited-api\textprocessingdotcom\manual_install.py](text-processing-dot-com-unlimited-api\textprocessingdotcom\) with Python2/Python3
 
 ##Sentiment Analysis API
 
