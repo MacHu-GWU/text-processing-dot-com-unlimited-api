@@ -2,12 +2,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>WeatherBugHome Sentiment Analyzer</title>
+<title>Sentiment Analyzer</title>
 </head>
 <body>
 
-<div>WeahterBugHome Sentiment Analyzer, url = http://10.255.145.57:8081/</div>
-<div>Author: Sanhe Hu, 2015-05-28</div>
+<div>Sentiment Analyzer, url = http://10.255.145.57:8081/</div>
+<div>Author: Sanhe Hu, 2015-09-24</div>
 <br>
 <form action="/result" method="POST" enctype="multipart/form-data">
   Select a csv or txt File: <input type="file" name="upload" />

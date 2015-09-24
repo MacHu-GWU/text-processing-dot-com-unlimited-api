@@ -1,12 +1,17 @@
-##encoding=utf-8
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 """
 This is a web app you can use to do batch sentiment analysis.
-Notice: To use this app, first edit the ip address at the bottom of this script first.
+
+Notice: To use this app, edit the IP address at the bottom of this script first.
 
 Prerequisite
-------------
-    numpy, pandas, bottle
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- numpy
+- pandas
+- bottle
 """
 
 from textprocessingdotcom import SentimentProcessor
@@ -20,22 +25,24 @@ processor = SentimentProcessor()
 
 class Payload():
     def __init__(self):
-        self.data = {
-            "batch_query_result": None
-            }
+        self.data = {"batch_query_result": None}
+
 
 @bottle.route("/")
 def index():
     payload = Payload()
     return bottle.template("index", payload.data)
 
+
 @bottle.post("/result")
 def get_sentiment_analysis_result():
-    payload = Payload()
-    upload = bottle.request.files.get("upload")
-    filename = str(datetime.datetime.now().timestamp()) # add timestamp as surfix
-    uploadpath = r"user_uploaded\%s.tmp" % filename
-    upload.save(uploadpath)
+    payload = Payload() # initialize payload
+    upload = bottle.request.files.get("upload") # get file
+    # create a temp file name which is upload timestamp for it.
+    filename = str(datetime.datetime.now().timestamp())
+    
+    uploadpath = r"user_uploaded\%s.tmp" % filename # save as path
+    upload.save(uploadpath) # save that to server
     
     # read user uploaded data
     try:
@@ -46,6 +53,7 @@ def get_sentiment_analysis_result():
     except:
         pass
     
+    # perform sentiment analysis
     for row in df:
         res = processor.process(row[0])
         if res:
@@ -54,11 +62,15 @@ def get_sentiment_analysis_result():
         else:
             row.append(None)
             row.append(None)
+    
+    # save result to csv file
     df = pd.DataFrame(df, columns=["text", "polarity", "positive score"])
     df.to_csv(r"user_uploaded\%s.csv" % filename, index=False)
     
+    # rend html
     payload.data["batch_query_result"] = "%s.csv" % filename
     return bottle.template("index", payload.data)
+
 
 @bottle.route("/<filename>")
 def serve_static(filename):
