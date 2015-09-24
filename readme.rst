@@ -19,7 +19,7 @@ Download here: https://github.com/MacHu-GWU/text-processing-dot-com-unlimited-ap
 
 In windows:
 
-.. code-blcok: console
+.. code-block:: console
 
 	cd text-processing-dot-com-unlimited-api\textprocessingdotcom
 	python zzz_manual_install.py
@@ -31,7 +31,9 @@ Sentiment Analysis API
 
 This module can make http request to http://text-processing.com/demo/sentiment to get sentiment analysis result. Because it doesn't use www.text-processing.com API, so it's completely free and no limited. But if you make too much http requests in short period of time, your IP could be banned for short time.
 
-Usage example::
+Usage example:
+
+.. code-block:: python
 
 	#!/usr/bin/env python
 	# -*- coding: utf-8 -*-
@@ -40,5 +42,6 @@ Usage example::
 	from textprocessingdotcom import SentimentProcessor
 	
 	processor = SentimentProcessor()
-	text = "I don't like it."
-	print(processor.process(text))
+
+	text = "It helps me saving money"
+	print(processor.process(text)) #  ('pos', 0.6)
